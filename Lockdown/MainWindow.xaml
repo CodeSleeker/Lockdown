@@ -1,0 +1,109 @@
+﻿<Window x:Class="Lockdown.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lockdown"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight"
+        AllowsTransparency="True"
+        WindowStyle="None">
+    <Window.Resources>
+        <Style TargetType="{x:Type local:MainWindow}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Window">
+                        <Border>
+                            <Grid Height="{Binding WindowHeight}"
+                                  Width="{Binding WindowWidth}">
+                                <Grid>
+                                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid VerticalAlignment="Center"
+          HorizontalAlignment="Center"
+          Background="Transparent"
+          Height="200">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.ColumnSpan="4"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Style="{StaticResource CloseButtonStyle}" Click="Button_Click"/>
+        <Border Width="125"
+                Height="150"
+                Background="White"
+                Margin="25,0,0,0"
+                BorderBrush="#555050"
+                BorderThickness="1">
+            <Border Width="50"
+                    Height="50"
+                    CornerRadius="25"
+                    Background="#555050"
+                    Visibility="Hidden"
+                    x:Name="B1"
+                    x:FieldModifier="public"/>
+        </Border>
+        <Border Width="125"
+                Height="150"
+                Background="White"
+                Margin="25,0,0,0"
+                BorderBrush="#555050"
+                Grid.Column="1"
+                BorderThickness="1">
+            <Border Width="50"
+                    Height="50"
+                    CornerRadius="25"
+                    Background="#555050"
+                    Visibility="Hidden"
+                    x:Name="B2"
+                    x:FieldModifier="public"/>
+        </Border>
+        <Border Width="125"
+                Height="150"
+                Background="White"
+                Margin="25,0,0,0"
+                BorderBrush="#555050"
+                Grid.Column="2"
+                BorderThickness="1">
+            <Border Width="50"
+                    Height="50"
+                    CornerRadius="25"
+                    Background="#555050"
+                    Visibility="Hidden"
+                    x:Name="B3"
+                    x:FieldModifier="public"/>
+        </Border>
+        <Border Width="125"
+                Height="150"
+                Background="White"
+                Margin="25,0,25,0"
+                BorderBrush="#555050"
+                Grid.Column="3"
+                BorderThickness="1">
+            <Border Width="50"
+                    Height="50"
+                    CornerRadius="25"
+                    Background="#555050"
+                    Visibility="Hidden"
+                    
+                    x:Name="B4"
+                    x:FieldModifier="public"/>
+        </Border>
+        
+    </Grid>
+</Window>
