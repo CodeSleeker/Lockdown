@@ -71,7 +71,7 @@ namespace Lockdown
                     pin = "";
                     main.Hide();
                     isLock = !isLock;
-                    if (isLock) MH.MouseHook(width, height);
+                    if (isLock) hookId = MH.MouseHook(width, height);
                     willActivate = false;
                 }
             }
